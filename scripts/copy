@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ $1 == '-h' ]] || [[ $1 == '-help' ]] ; then
+  echo "Copy standard input to the clipboard. Standard input can be pasted with Ctrl + V."
+  exit 0;
+fi
+
+read input
+echo $input | tr -d '\n' | xclip -selection clipboard 
+
